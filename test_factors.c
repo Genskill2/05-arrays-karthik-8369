@@ -21,13 +21,33 @@ int main(void) {
   assert (ret[1] == 13);
   printf("Factors: passed\n");
 }
-int factors(int a,int fact[]){
-int c,i;
-for(c=2;a>1;c++){
-while(a%c==0){
-(fact[0])++;
-a=a/c;
+int factors(int num,int arr[])
+{
+	int prime=2,ref=0;
+	int count=0,index=0;
+	while(num!=1){
+		if(num%prime==0){
+			num=num/prime;
+			count++;
+			arr[index]=prime;
+			index++;
+		}
+		else{
+			while(1){
+				prime++;
+				for(int j=2;j<prime;j++){
+					if(prime%j==0)
+						ref++;
+				}
+				if(ref==0){
+					break;
+				}
+				else{
+					ref=0;
+				}
+			}
+		}
+	}
+	return count;
 }
-} for(i=0;fact[i]!=0;i++){
-}
-return i;}
+
