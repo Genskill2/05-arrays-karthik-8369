@@ -1,6 +1,7 @@
 /* Enter your solutions in this file */
 #include <stdio.h>
-int max(const int arr[],int n){
+int max(const int arr[],int n)
+{
 	int Max=arr[0];
 	for(int i=0;i<n;i++){
 		if(arr[i]>Max){
@@ -10,7 +11,8 @@ int max(const int arr[],int n){
 	return Max;
 }
 
-int min(const int arr[],int n){
+int min(const int arr[],int n)
+{
 	int Min=arr[0];
 	for(int i=0;i<n;i++){
 		if(arr[i]<Min){
@@ -20,7 +22,8 @@ int min(const int arr[],int n){
 	return Min;
 }
 
-float average(const int arr[],int n){
+float average(const int arr[],int n)
+{
 	float sum=0.0;
 	for(int i=0;i<n;i++){
 		sum+=arr[i];
@@ -29,7 +32,8 @@ float average(const int arr[],int n){
 }
 
 
-int mode(int arr[],int n){
+int mode(int arr[],int n)
+{
 	int num,temp_num;
 	int count=0,temp_count=0;
 	// sort(arr,n);
@@ -44,7 +48,8 @@ int mode(int arr[],int n){
 		}
 	}
 	temp_num=arr[0];
-	for(int i=0;i<n;i++){
+	for(int i=0;i<n;i++)
+	{
 		if(arr[i]==temp_num){
 			temp_count++;
 		}
@@ -57,7 +62,8 @@ int mode(int arr[],int n){
 			temp_count=1;
 		}
 	}
-	if(temp_count>count){
+	if(temp_count>count)
+	{
 		count=temp_count;
 		num=temp_num;
 	}
@@ -66,7 +72,8 @@ int mode(int arr[],int n){
 
 
 
-int factors(int num,int arr[]){
+int factors(int num,int arr[])
+{
 	int prime=2,ref=0;
 	int count=0,index=0;
 	while(num!=1){
@@ -76,17 +83,21 @@ int factors(int num,int arr[]){
 			arr[index]=prime;
 			index++;
 		}
-		else{
-			while(1){
+		else
+		{
+			while(1)
+			{
 				prime++;
 				for(int j=2;j<prime;j++){
 					if(prime%j==0)
 						ref++;
 				}
-				if(ref==0){
+				if(ref==0)
+				{
 					break;
 				}
-				else{
+				else
+				{
 					ref=0;
 				}
 			}
