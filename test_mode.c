@@ -30,4 +30,6 @@ int mode(int mode[],int a){
    }
 
    return maxValue;
+  
+  
 }
