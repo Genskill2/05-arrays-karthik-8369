@@ -1,76 +1,43 @@
 /* Enter your solutions in this file */
 #include <stdio.h>
-int max(const int arr[],int n)
-{
-	int Max=arr[0];
-	for(int i=0;i<n;i++){
-		if(arr[i]>Max){
-			Max=arr[i];
-		}
-	}
-	return Max;
-}
+int max(int max[],int a){
+  int i;
+  for(i=1;i<a;i++){
+  max[0]=max[0]>max[i]?(max[0]):(max[i]);
+  }
+  return max[0];}
+int min(int min[],int a){
+  int i;
+  for(i=1;i<a;i++){
+  min[0]=min[0]<min[i]?(min[0]):(min[i]);
+  }
+  return min[0];}
+float average(int avg[],int a){
+  int i,d=0;
+  for(i=0;i<a;i++){
+  d=d+avg[i];
+  }
+  return d/a;}
+int mode(int mode[],int a){
+  int maxValue = 0, max = 0, i, j;
 
-int min(const int arr[],int n)
-{
-	int Min=arr[0];
-	for(int i=0;i<n;i++){
-		if(arr[i]<Min){
-			Min=arr[i];
-		}
-	}
-	return Min;
-}
+   for (i = 0; i < a; ++i) {
+      int count = 0;
+      
+      for (j = 0; j < a; ++j) {
+         if (mode[j] == mode[i])
+         ++count;
+      }
+      
+      if (count > max) {
+         max = count;
+         maxValue = mode[i];
+      }
+   }
 
-float average(const int arr[],int n)
-{
-	float sum=0.0;
-	for(int i=0;i<n;i++){
-		sum+=arr[i];
-	}
-	return sum/n;
+   return maxValue;
 }
-
-
-int mode(int arr[],int n){
-	
-	int num,temp;
-	int c=0,temp_c=0;
-	// sort(arr,n);
-	for(int i=0;i<n-1;i++){
-		for(int j=0;j<n-1;j++){
-			if(arr[j+1]<arr[j]){
-				temp=arr[j];
-				arr[j]=arr[j+1];
-				arr[j+1]=temp;
-			}
-		}
-	}
-	temp=arr[0];
-	for(int i=0;i<n;i++){
-		if(arr[i]==temp){
-			temp_c++;
-		}
-		else{
-			if(temp_c>c){
-				c=temp_c;
-				num=temp;
-			}
-			temp=arr[i];
-			temp_c=1;
-		}
-		
-	}
-	if(temp_c>c){
-		
-		c=temp_c;
-		num=temp;
-	}
-	return num;
-}
-int factors(int num,int arr[])
-	
-{
+int factors(int num,int arr[]){
 	int prime=2,ref=0;
 	int count=0,index=0;
 	while(num!=1){
@@ -80,21 +47,17 @@ int factors(int num,int arr[])
 			arr[index]=prime;
 			index++;
 		}
-		else
-		{
-			while(1)
-			{
+		else{
+			while(1){
 				prime++;
 				for(int j=2;j<prime;j++){
 					if(prime%j==0)
 						ref++;
 				}
-				if(ref==0)
-				{
+				if(ref==0){
 					break;
 				}
-				else
-				{
+				else{
 					ref=0;
 				}
 			}
