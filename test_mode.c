@@ -12,3 +12,22 @@ int main(void) {
   assert (mode(y, 1) == 5);
   printf("Mode: passed\n");
   }
+int mode(int mode[],int a){
+  int maxValue = 0, max = 0, i, j;
+
+   for (i = 0; i < a; ++i) {
+      int count = 0;
+      
+      for (j = 0; j < a; ++j) {
+         if (mode[j] == mode[i])
+         ++count;
+      }
+      
+      if (count > max) {
+         max = count;
+         maxValue = mode[i];
+      }
+   }
+
+   return maxValue;
+}
