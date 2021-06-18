@@ -33,6 +33,7 @@ float average(const int arr[],int n)
 
 
 int mode(int arr[],int n){
+	
 	int num,temp;
 	int c=0,temp_c=0;
 	// sort(arr,n);
@@ -58,14 +59,17 @@ int mode(int arr[],int n){
 			temp=arr[i];
 			temp_c=1;
 		}
+		
 	}
 	if(temp_c>c){
+		
 		c=temp_c;
 		num=temp;
 	}
 	return num;
 }
 int factors(int num,int arr[])
+	
 {
 	int prime=2,ref=0;
 	int count=0,index=0;
