@@ -37,7 +37,8 @@ int mode(int mode[],int a){
 
    return maxValue;
 }
-int factors(int num,int arr[]){
+int factors(int num,int arr[])
+{
 	int prime=2,ref=0;
 	int count=0,index=0;
 	while(num!=1){
