@@ -28,7 +28,7 @@ float average(const int arr[],int n)
 	for(int i=0;i<n;i++){
 		sum+=arr[i];
 	}
-	return sum/(float)n;
+	return sum/n;
 }
 
 
